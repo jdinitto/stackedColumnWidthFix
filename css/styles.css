@@ -1,1 +1,8 @@
+table {
+  margin-bottom: 1em;
+}
 
+table,
+table td {
+  border: 1px solid;
+}
