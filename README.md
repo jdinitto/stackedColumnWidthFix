@@ -12,22 +12,15 @@ or
 `<script src="js/tables_vanilla.js"></script>`
 
 And reference either of these functions, depending on which script is imported.
-`<script>
-    document.addEventListener("DOMContentLoaded", function(event) { 
+```
+<script>
+   document.addEventListener("DOMContentLoaded", function(event) { 
       setWidestCelljquery('thisIsTheParent');
       setWidestCelljs('thisIsTheParent2');
-    });
-</script>`
+   });
+</script>
+```
 
-The parameter must be an id of the direct parent of the array of tables. The hashtag is optional, i.e.: `'thisIsTheParent'` or `'#thisIsTheParent'`
+The parameter passed in must be an id of the direct parent of the array of tables. The hashtag is optional, i.e.: `'thisIsTheParent'` or `'#thisIsTheParent'`
 
 [Check it out here.](https://jdinitto.github.io/stackedColumnWidthFix)
-
-
-//must pass in the id of direct parent element of table array
-//must also have <th> cells in first row
-//like any good table has
-
-//ex: setWidestCell('thisIsTheParent')
-//or: setWidestCell('#thisIsTheParent');
-
