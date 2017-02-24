@@ -3,83 +3,221 @@
 <head>
 <title>Stacked Column Width Fix</title>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <script type="text/javascript" src="js/script.js"></script>
+   <script data-require="jquery@2.2.4" data-semver="2.2.4" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="js/tables_jquery.js"></script>
+  <script src="js/tables_vanilla.js"></script>
   
   <script>
     document.addEventListener("DOMContentLoaded", function(event) { 
-      setWidestCell('thisIsTheParent');
+      setWidestCelljquery('thisIsTheParent');
+      setWidestCelljs('thisIsTheParent2');
     });
   </script>
 </head>
 
 <body>
-<div id="thisIsTheParent">
-  <table>
-    <thead>
-      <tr>
-        <th>1st header</th>
-        <th>2nd header</th>
-        <th>3rd header</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>String here</td>
-        <td>Here too</td>
-        <td>Huh?</td>
-      </tr>
-    </tbody>
-  </table>
+<h1>Without fix:</h1>
+    <div id="withoutFix">
+      <table>
+        <thead>
+          <tr>
+            <th>1st header</th>
+            <th>2nd header</th>
+            <th>3rd header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>String here</td>
+            <td>Here too</td>
+            <td>Huh?</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>1st header</th>
+            <th>2nd header</th>
+            <th>3rd header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>?</td>
+            <td>Really long string to demonstrate this function.</td>
+            <td>Nope.</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>1st header</th>
+            <th>2nd header</th>
+            <th>3rd header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>This isn't</td>
+            <td>the droid</td>
+            <td>you're looking for.</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>1st header</th>
+            <th>2nd header</th>
+            <th>3rd header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>You don't need</td>
+            <td>to see</td>
+            <td>his identification.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>1st header</th>
-        <th>2nd header</th>
-        <th>3rd header</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>?</td>
-        <td>Really long string to demonstrate this function.</td>
-        <td>Nope.</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <table>
-    <thead>
-      <tr>
-        <th>1st header</th>
-        <th>2nd header</th>
-        <th>3rd header</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>This isn't</td>
-        <td>the droid</td>
-        <td>you're looking for.</td>
-      </tr>
-    </tbody>
-  </table>
-  <table>
-    <thead>
-      <tr>
-        <th>1st header</th>
-        <th>2nd header</th>
-        <th>3rd header</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>You don't need</td>
-        <td>to see</td>
-        <td>his identification.</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+    <h1>Jquery version:</h1>
+    <div id="thisIsTheParent">
+      <table>
+        <thead>
+          <tr>
+            <th>1st header</th>
+            <th>2nd header</th>
+            <th>3rd header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>String here</td>
+            <td>Here too</td>
+            <td>Huh?</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>1st header</th>
+            <th>2nd header</th>
+            <th>3rd header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>?</td>
+            <td>Really long string to demonstrate this function.</td>
+            <td>Nope.</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>1st header</th>
+            <th>2nd header</th>
+            <th>3rd header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>This isn't</td>
+            <td>the droid</td>
+            <td>you're looking for.</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>1st header</th>
+            <th>2nd header</th>
+            <th>3rd header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>You don't need</td>
+            <td>to see</td>
+            <td>his identification.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <h1>Pure JS version:</h1>
+    <div id="thisIsTheParent2">
+      <table>
+        <thead>
+          <tr>
+            <th>1st header</th>
+            <th>2nd header</th>
+            <th>3rd header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>String here</td>
+            <td>Here too</td>
+            <td>Huh?</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>1st header</th>
+            <th>2nd header</th>
+            <th>3rd header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>?</td>
+            <td>Really long string to demonstrate </td>
+            <td>this function.</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>1st header</th>
+            <th>2nd header</th>
+            <th>3rd header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>This isn't</td>
+            <td>the droid you're looking</td>
+            <td>for.</td>
+          </tr>
+        </tbody>
+      </table>
+      <table>
+        <thead>
+          <tr>
+            <th>1st header</th>
+            <th>2nd header</th>
+            <th>3rd header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>You don't need to see</td>
+            <td>his</td>
+            <td>identification.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 </body>
 </html>

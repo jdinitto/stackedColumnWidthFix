@@ -1,16 +1,4 @@
-//find the widest cell in each column in a series of 2 tables or more
-//for perfectly aligned/non-jaggy cells
-//good for tables that may have different lengths of data
-
-//must pass in the id of direct parent element of table array
-//must also have <th> cells in first row
-//like any good table has
-
-//ex: setWidestCell('thisIsTheParent')
-
-//to do: clean up two loops
-
-function setWidestCell(el) {
+function setWidestCelljs(el) {
 
   var widthArr = [],
 
