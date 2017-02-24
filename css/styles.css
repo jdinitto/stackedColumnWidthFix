@@ -1,8 +1,20 @@
+body, html {
+  font-family: helvetica, arial, "sans serif";  
+  }
+
+div {
+  margin-bottom: 3em;
+}
+  
 table {
-  margin-bottom: 1em;
+  margin: 0 auto 1em auto;
+  border: 1px solid #ccc;
+  width: 600px;
 }
 
-table,
 table td {
-  border: 1px solid;
+  border-right: 5px solid #c00;
+  background-color: #ededed;
+  margin: 0;
+  padding: 0;
 }
