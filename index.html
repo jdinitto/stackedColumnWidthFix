@@ -1,223 +1,321 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Stacked Column Width Fix</title>
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
-   <script data-require="jquery@2.2.4" data-semver="2.2.4" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script src="js/tables_jquery.js"></script>
-  <script src="js/tables_vanilla.js"></script>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", function(event) { 
-      setWidestCelljquery('thisIsTheParent');
-      setWidestCelljs('thisIsTheParent2');
-    });
-  </script>
+    <title>Stacked Column Width Fix</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script data-require="jquery@2.2.4" data-semver="2.2.4" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/tables_jquery.js"></script>
+    <script src="js/tables_vanilla.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            setWidestCelljquery('thisIsTheParent');
+            setWidestCelljs('thisIsTheParent2');
+        });
+    </script>
 </head>
 
 <body>
-<h1>Without fix :/</h1>
+    <h2>Without fix :/</h2>
     <div id="withoutFix">
-      <table>
-        <thead>
-          <tr>
-            <th>1st header</th>
-            <th>2nd header</th>
-            <th>3rd header</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>String here</td>
-            <td>Here too</td>
-            <td>Huh?</td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <thead>
-          <tr>
-            <th>1st header</th>
-            <th>2nd header</th>
-            <th>3rd header</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>?</td>
-            <td>Really long string to demonstrate this function.</td>
-            <td>Nope.</td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <thead>
-          <tr>
-            <th>1st header</th>
-            <th>2nd header</th>
-            <th>3rd header</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>This isn't</td>
-            <td>the droid</td>
-            <td>you're looking for.</td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <thead>
-          <tr>
-            <th>1st header</th>
-            <th>2nd header</th>
-            <th>3rd header</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>You don't need</td>
-            <td>to see</td>
-            <td>his identification.</td>
-          </tr>
-        </tbody>
-      </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Table 1</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Governor Tarkin, I should have expected to find you holding Vader's leash.</td>
+                    <td>You don't</td>
+                    <td>We don't need</td>
+                </tr>
+                <tr>
+                    <td>I recognized your foul</td>
+                    <td>need to</td>
+                    <td>see his</td>
+                </tr>
+                <tr>
+                    <td>stench when I was brought onboard.</td>
+                    <td>see his identification.</td>
+                    <td>identification.</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Table 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>These aren't</td>
+                    <td>These aren't the</td>
+                    <td>He can</td>
+                </tr>
+                <tr>
+                    <td>the droids</td>
+                    <td>droids we're</td>
+                    <td>go about his</td>
+                </tr>
+                <tr>
+                    <td>you're looking for.</td>
+                    <td>looking for.</td>
+                    <td>business.</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Table 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>You can</td>
+                    <td>Move along.</td>
+                    <td>What a</td>
+                </tr>
+                <tr>
+                    <td>go</td>
+                    <td>Move</td>
+                    <td>piece of</td>
+                </tr>
+                <tr>
+                    <td>about your business.</td>
+                    <td>along</td>
+                    <td>junk!</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Table 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>She'll make point</td>
+                    <td>She may not look like much</td>
+                    <td>I've made a lot of</td>
+                </tr>
+                <tr>
+                    <td>five past</td>
+                    <td>but she's got it where</td>
+                    <td>special</td>
+                </tr>
+                <tr>
+                    <td>lightspeed.</td>
+                    <td>it counts, kid.</td>
+                    <td>modifications myself.</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-    <h1>Jquery version :D</h1>
+    <h2>Jquery version :D</h2>
     <div id="thisIsTheParent">
-      <table>
-        <thead>
-          <tr>
-            <th>1st header</th>
-            <th>2nd header</th>
-            <th>3rd header</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>String here</td>
-            <td>Here too</td>
-            <td>Huh?</td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <thead>
-          <tr>
-            <th>1st header</th>
-            <th>2nd header</th>
-            <th>3rd header</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>?</td>
-            <td>Really long string to demonstrate this function.</td>
-            <td>Nope.</td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <thead>
-          <tr>
-            <th>1st header</th>
-            <th>2nd header</th>
-            <th>3rd header</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>This isn't</td>
-            <td>the droid</td>
-            <td>you're looking for.</td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <thead>
-          <tr>
-            <th>1st header</th>
-            <th>2nd header</th>
-            <th>3rd header</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>You don't need</td>
-            <td>to see</td>
-            <td>his identification.</td>
-          </tr>
-        </tbody>
-      </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Table 1</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Governor Tarkin, I should have expected to find you holding Vader's leash.</td>
+                    <td>You don't</td>
+                    <td>We don't need</td>
+                </tr>
+                <tr>
+                    <td>I recognized your foul</td>
+                    <td>need to</td>
+                    <td>see his</td>
+                </tr>
+                <tr>
+                    <td>stench when I was brought onboard.</td>
+                    <td>see his identification.</td>
+                    <td>identification.</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Table 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>These aren't</td>
+                    <td>These aren't the</td>
+                    <td>He can</td>
+                </tr>
+                <tr>
+                    <td>the droids</td>
+                    <td>droids we're</td>
+                    <td>go about his</td>
+                </tr>
+                <tr>
+                    <td>you're looking for.</td>
+                    <td>looking for.</td>
+                    <td>business.</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Table 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>You can</td>
+                    <td>Move along.</td>
+                    <td>What a</td>
+                </tr>
+                <tr>
+                    <td>go</td>
+                    <td>Move</td>
+                    <td>piece of</td>
+                </tr>
+                <tr>
+                    <td>about your business.</td>
+                    <td>along</td>
+                    <td>junk!</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Table 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>She'll make point</td>
+                    <td>She may not look like much</td>
+                    <td>I've made a lot of</td>
+                </tr>
+                <tr>
+                    <td>five past</td>
+                    <td>but she's got it where</td>
+                    <td>special</td>
+                </tr>
+                <tr>
+                    <td>lightspeed.</td>
+                    <td>it counts, kid.</td>
+                    <td>modifications myself.</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    
-    <h1>Pure JS version :D</h1>
+
+    <h2>Pure JS version :D</h2>
     <div id="thisIsTheParent2">
-      <table>
-        <thead>
-          <tr>
-            <th>1st header</th>
-            <th>2nd header</th>
-            <th>3rd header</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>String here</td>
-            <td>Here too</td>
-            <td>Huh?</td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <thead>
-          <tr>
-            <th>1st header</th>
-            <th>2nd header</th>
-            <th>3rd header</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>?</td>
-            <td>Really long string to demonstrate </td>
-            <td>this function.</td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <thead>
-          <tr>
-            <th>1st header</th>
-            <th>2nd header</th>
-            <th>3rd header</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>This isn't</td>
-            <td>the droid you're looking</td>
-            <td>for.</td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <thead>
-          <tr>
-            <th>1st header</th>
-            <th>2nd header</th>
-            <th>3rd header</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>You don't need to see</td>
-            <td>his</td>
-            <td>identification.</td>
-          </tr>
-        </tbody>
-      </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Table 1</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Governor Tarkin, I should have expected to find you holding Vader's leash.</td>
+                    <td>You don't</td>
+                    <td>We don't need</td>
+                </tr>
+                <tr>
+                    <td>I recognized your foul</td>
+                    <td>need to</td>
+                    <td>see his</td>
+                </tr>
+                <tr>
+                    <td>stench when I was brought onboard.</td>
+                    <td>see his identification.</td>
+                    <td>identification.</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Table 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>These aren't</td>
+                    <td>These aren't the</td>
+                    <td>He can</td>
+                </tr>
+                <tr>
+                    <td>the droids</td>
+                    <td>droids we're</td>
+                    <td>go about his</td>
+                </tr>
+                <tr>
+                    <td>you're looking for.</td>
+                    <td>looking for.</td>
+                    <td>business.</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Table 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>You can</td>
+                    <td>Move along.</td>
+                    <td>What a</td>
+                </tr>
+                <tr>
+                    <td>go</td>
+                    <td>Move</td>
+                    <td>piece of</td>
+                </tr>
+                <tr>
+                    <td>about your business.</td>
+                    <td>along</td>
+                    <td>junk!</td>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Table 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>She'll make point</td>
+                    <td>She may not look like much</td>
+                    <td>I've made a lot of</td>
+                </tr>
+                <tr>
+                    <td>five past</td>
+                    <td>but she's got it where</td>
+                    <td>special</td>
+                </tr>
+                <tr>
+                    <td>lightspeed.</td>
+                    <td>it counts, kid.</td>
+                    <td>modifications myself.</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
+
 </html>
