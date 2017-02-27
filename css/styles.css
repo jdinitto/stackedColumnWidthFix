@@ -7,13 +7,13 @@ div {
 }
   
 table {
-  margin: 0 auto 1em auto;
+  margin: 0 0 1em 2em;
   border: 1px solid #ccc;
   width: 600px;
 }
 
-table td {
-  border-right: 5px solid #c00;
+table tr td {
+  border-right: 2px solid #c00;
   background-color: #ededed;
   margin: 0;
   padding: 0;
