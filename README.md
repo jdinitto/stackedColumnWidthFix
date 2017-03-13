@@ -26,7 +26,7 @@ he parameter passed in must be an id of the direct parent of the array of tables
 [Check it out here.](https://jdinitto.github.io/stackedColumnWidthFix) - Notice the red right border color for comparison purposes.
 
 ### NOTE NOTE NOTE NOTE NOTE
-Depending on the data being populated, it doesn't match widths *exactly*. You can use your favorite DOM inspector to see that cell widths that should match, don't match in reality; there can be a pixelish of difference, though it sometimes it's hard to pick up on it, visually. I think this has something to do with the padding and wrapping of text and white-space native to browsers that force a little width here and there. I can't be sure.
+Depending on the data being populated, it doesn't match widths *exactly*. You can use your favorite DOM inspector to see that cell widths that should match, don't match in reality; there can be a pixelish of difference, though it can be hard to pick up on it, visually. I think this has something to do with the padding and wrapping of text and white-space native to browsers that force a little width here and there. I can't be sure.
 
 ## To Do
 I probably won't get to these, but these are good enhancements for the enterprising upstart coder.
